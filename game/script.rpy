@@ -22,11 +22,17 @@ label start:
 
     show eileen happy
 
-    # These display lines of dialogue.
+    # This is the introduction
 
-    "Where...where am I?"
+    "It's the year 20XX. Things are very different now. After the war, things became much more simple."
 
-    m "Shh... Don't wake the new ones"
+    "This is the community where I live. Arcadia"
+
+    #begin multiple choice section here.
+
+    "I'm Player Character. I'm a ~gender of choice~."
+
+    "I make my living by ~pick job here~"
 
     # This ends the game.
 
