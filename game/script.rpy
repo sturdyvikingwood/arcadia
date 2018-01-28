@@ -1,10 +1,8 @@
 ﻿# The script of the game goes in this file.
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
-define m = Character("Mysterious Voice")
-
+# Declare characters used by this game.
+define p = Character(_("player character"), color="#c8ffc8")
+define g = Character(_("George"), color="#ffa500f")
 
 # The game starts here.
 
@@ -42,7 +40,8 @@ label start:
     
     "I listen every night, with my cat by my side"
     
-    "Time to tune into my favorites this evening. First I think I'll listen to ~NPC choices will go here~
+    "Time to tune into my favorites this evening. First I think I'll listen to ~NPC choices will go here~"
+    
     # This ends the game.
 
     return
