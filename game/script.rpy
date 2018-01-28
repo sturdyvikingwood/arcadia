@@ -1,8 +1,8 @@
 ﻿# The script of the game goes in this file.
 
 # Declare characters used by this game.
-define p = Character(_("player character"), color="#c8ffc8")
-define g = Character(_("George"), color="#ffa500f")
+define p = Character(_("[name]"), color="#c8ffc8")
+define g = Character(_("George"), color="#ffa500")
 
 # The game starts here.
 
@@ -28,19 +28,55 @@ label start:
 
     #begin multiple choice section here.
 
-    "I'm Player Character. I'm a ~gender of choice~."
+    python:
+        name = renpy.input(_("My name is..."))
 
-    "I make my living by ~pick job here~."
+        name = name.strip() or __("Guy Shy")
+ 
+     
+    p "I'm a ~gender of choice~."
+
+    p "I make my living by..."
     
-    "Everyone in the community works hard, and I'm glad I have ~insert goods based on job choice~ to trade with everyone."
+    menu:
+
+        "farming.":
+            jump choice1_yes
+
+        "raising goats.":
+            jump choice1_no
+            
+    label choice1_yes:
+
+        $ menu_flag = True
+
+        p "Everyone in the community works hard, and I'm glad I have crops to trade with everyone."
+
+        jump choice1_done
+
+    label choice1_no:
+
+        $ menu_flag = False
+
+        p "Everyone in the community works hard, and I'm glad I have milk & cheese to trade with everyone."
+
+        jump choice1_done
+
+    label choice1_done:
+
+        # ... the game continues here.
+ 
+    
 
     #here's where we get into the meat of things- gotta intro the "romanceable" NPCs
     
-    "To keep up with communities further away, we settle in to listen to transmissions from across the continent"
+    p "To keep up with communities further away, we settle in to listen to transmissions from across the continent"
     
-    "I listen every night, with my cat by my side"
+    p "I listen every night, with my cat by my side"
     
-    "Time to tune into my favorites this evening. First I think I'll listen to ~NPC choices will go here~"
+    g "~purrrr~"
+    
+    p"Time to tune into my favorites this evening. First I think I'll listen to ~NPC choices will go here~"
     
     # This ends the game.
 
