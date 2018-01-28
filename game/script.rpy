@@ -12,7 +12,7 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg room
+    scene bg arcadia
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
@@ -50,6 +50,8 @@ label start:
 
         $ menu_flag = True
 
+        scene bg farmer
+        
         p "Everyone in the community works hard, and I'm glad I have crops to trade with everyone."
 
         jump choice1_done
@@ -58,6 +60,8 @@ label start:
 
         $ menu_flag = False
 
+        scene bg goats
+        
         p "Everyone in the community works hard, and I'm glad I have milk & cheese to trade with everyone."
 
         jump choice1_done
@@ -69,6 +73,8 @@ label start:
     
 
     #here's where we get into the meat of things- gotta intro the "romanceable" NPCs
+    
+    scene bg arcadia
     
     p "To keep up with communities further away, we settle in to listen to transmissions from across the continent"
     
