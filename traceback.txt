@@ -1,0 +1,25 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 29, in script
+    m nvl "Shh... Don't wake the new ones"
+Exception: Say has image attributes (u'nvl',), but there's no image tag associated with the speaking character.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 29, in script
+    m nvl "Shh... Don't wake the new ones"
+  File "D:\Alicia\renpy\renpy-6.99.14-sdk\renpy\ast.py", line 643, in execute
+    renpy.exports.say(who, what, interact=self.interact, *args, **kwargs)
+  File "D:\Alicia\renpy\renpy-6.99.14-sdk\renpy\exports.py", line 1175, in say
+    who(what, *args, **kwargs)
+  File "D:\Alicia\renpy\renpy-6.99.14-sdk\renpy\character.py", line 949, in __call__
+    self.resolve_say_attributes(False, wanted=speaking)
+  File "D:\Alicia\renpy\renpy-6.99.14-sdk\renpy\character.py", line 845, in resolve_say_attributes
+    raise Exception("Say has image attributes %r, but there's no image tag associated with the speaking character." % (attrs,))
+Exception: Say has image attributes (u'nvl',), but there's no image tag associated with the speaking character.
+
+Windows-8-6.2.9200
+Ren'Py 6.99.14.3135
+arcadia 1.0

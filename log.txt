@@ -1,25 +1,25 @@
-Sat Jan 27 12:43:51 2018
+Sat Jan 27 13:53:41 2018
 Windows-8-6.2.9200
 Ren'Py 6.99.14.3135
  
 
-Bootstrap to the start of init.init took 0.26s
+Bootstrap to the start of init.init took 0.25s
 Early init took 0.01s
 Loader init took 0.03s
-Loading error handling took 0.07s
-Loading script took 0.43s
-Loading save slot metadata. took 0.01s
+Loading error handling took 0.06s
+Loading script took 0.41s
+Loading save slot metadata. took 0.02s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.22s
-Loading analysis data took 0.09s
+Running init code took 0.17s
+Loading analysis data took 0.07s
 Analyze and compile ATL took 0.01s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\alici\\AppData\\Roaming/RenPy/backups\\arcadia':
-Dump and make backups. took 0.16s
+Dump and make backups. took 0.25s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.04s
+Initial gc. took 0.03s
 DPI scale factor: 1.250000
 Creating interface object took 0.11s
 Cleaning stores took 0.00s
@@ -27,10 +27,10 @@ Init translation took 0.07s
 Build styles took 0.02s
 Load screen analysis took 0.00s
 Analyze screens took 0.04s
-Save screen analysis took 0.23s
-Prepare screens took 0.17s
+Save screen analysis took 0.20s
+Prepare screens took 0.16s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.19s
+Save bytecode. took 0.18s
 Running _start took 0.00s
 Performance test:
 Interface start took 0.04s
@@ -273,18 +273,29 @@ Texture testing:
 - 512px textures work.
 - 1024px textures work.
 - 2048px textures work.
-Total time until interface ready: 4.06699991226s
+Total time until interface ready: 3.12800002098s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.022667 seconds.
-- Frame drawn at 0.035667 seconds.
-- Frame drawn at 0.049667 seconds.
-- Frame drawn at 0.080667 seconds.
-- 0.080667 seconds to render 5 frames.
-Cleaning stores took 0.00s
-Init translation took 0.38s
-Build styles took 0.02s
-Load screen analysis took 0.05s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
+- Frame drawn at 0.018667 seconds.
+- Frame drawn at 0.029667 seconds.
+- Frame drawn at 0.043667 seconds.
+- Frame drawn at 0.072667 seconds.
+- 0.072667 seconds to render 5 frames.
+
+Full traceback:
+  File "game/script.rpy", line 29, in script
+    m nvl "Shh... Don't wake the new ones"
+  File "D:\Alicia\renpy\renpy-6.99.14-sdk\renpy\ast.py", line 643, in execute
+    renpy.exports.say(who, what, interact=self.interact, *args, **kwargs)
+  File "D:\Alicia\renpy\renpy-6.99.14-sdk\renpy\exports.py", line 1175, in say
+    who(what, *args, **kwargs)
+  File "D:\Alicia\renpy\renpy-6.99.14-sdk\renpy\character.py", line 949, in __call__
+    self.resolve_say_attributes(False, wanted=speaking)
+  File "D:\Alicia\renpy\renpy-6.99.14-sdk\renpy\character.py", line 845, in resolve_say_attributes
+    raise Exception("Say has image attributes %r, but there's no image tag associated with the speaking character." % (attrs,))
+Exception: Say has image attributes (u'nvl',), but there's no image tag associated with the speaking character.
+
+While running game code:
+  File "game/script.rpy", line 29, in script
+    m nvl "Shh... Don't wake the new ones"
+Exception: Say has image attributes (u'nvl',), but there's no image tag associated with the speaking character.
